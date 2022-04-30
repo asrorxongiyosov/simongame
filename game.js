@@ -19,14 +19,19 @@ $(".btn").click(function () {
 });
 
 $("#rstbtn").click(function () {
+    var restartbtn = $(this).attr("id");
+    animatePress(restartbtn);
     if (!started) {
         $("#level-title").text("Level " + level);
         nextSequence();
         started = true;
     }
+
 })
 
 $('#strtbtn').click(function () {
+    var startbtn = $(this).attr("id");
+    animatePress(startbtn);
     if (!started) {
         $("#level-title").text("Level " + level);
         nextSequence();
@@ -84,7 +89,6 @@ function playSound(name) {
     }, 100);
 
 }
-
 function startOver() {
     level = 0;
     gamePattern = [];
