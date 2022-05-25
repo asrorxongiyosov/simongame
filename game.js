@@ -1,6 +1,10 @@
 
 var buttonColours = ["red", "blue", "green", "yellow"];
 
+// var listOfWords = ["salom", "hayir", "kal", "bosh", "quyosh", "suv", "kosa", "piyola", "non", "qozon", "bulut", "qor", "bahor", "mushuk"];
+// var randomWordIndex = listOfWords[Math.floor(Math.random() * listOfWords.length)];
+// alert('The computer chose: ' + randomWordIndex);
+
 var gamePattern = [];
 
 var userClickedPattern = [];
@@ -59,7 +63,7 @@ function checkAnswer(currentLevel) {
         $("body").addClass("game-over");
         setTimeout(function () {
             $("body").removeClass("game-over");
-        }, 200);
+        }, 300);
 
         $("#level-title").text("Game Over,Press Restart button to Restart");
         startOver();
@@ -73,6 +77,8 @@ function nextSequence() {
     $("#level-title").text("Level " + level);
     var randomNumber = Math.floor(Math.random() * 4);
     var randomChosenColour = buttonColours[randomNumber];
+
+   
     gamePattern.push(randomChosenColour);
     $("#" + randomChosenColour).fadeIn(500).fadeOut(500).fadeIn(500);
     playSound(randomChosenColour);
